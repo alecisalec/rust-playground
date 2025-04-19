@@ -4,15 +4,33 @@ use rand::Rng;
 
 
 fn main() {
+
+    let tup = (500.0, 6, "1");
+
+    let (a,_b,_c) = tup;
+    
+    println!("{}", a);
+
+    let y= {
+        let x = 5;
+        x+3
+    };
+    println!("{:?}",y);
+    println!("{}",val_return(20));
+    guessing_game();
+
+}
+
+fn val_return(a:i32) -> i32 {
+    a +55
+}
+
+
+fn guessing_game(){
     println!(" gues a number");
     println!(" input a guess");
 
-    
-
     let number_rand = rand::thread_rng().gen_range(1..=100);
-
-
-    
 
     loop{
 
@@ -43,5 +61,4 @@ fn main() {
         }
     }
     println!("exiting game!");
-
 }
